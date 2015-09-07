@@ -1,0 +1,39 @@
+<div class="col-md-6 md-login jumbotron">
+    <h3>Register: add register</h3>
+
+
+    <form role="form" name="myForm">
+        <div class= "form-group" ng-class="{error: myForm.name.$invalid}">
+            <label>Register name</label>
+            <div>
+                <input name="name" ng-model="register.name" type= "text" class= "form-control" placeholder="Register name" required/>
+                <span ng-show="myForm.name.$dirty && myForm.name.$invalid" class="help-inline">Name is required</span>
+            </div>
+        </div>
+        <div class= "form-group">
+            <label>Owner data</label>
+            <div>
+                <textarea name="owner_data" ng-model="register.owner_data" class= "form-control" placeholder= "Owner data"></textarea>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.owner_name.$invalid}">
+            <label>Owner name</label>
+            <div>
+                <input name="owner_name" ng-model="register.owner_name" type= "text" class= "form-control" placeholder="Owner name" required/>
+            </div>
+        </div>
+        <div class= "form-group" ng-class="{error: myForm.year.$invalid}">
+            <label>Year</label>
+            <div>
+                <input name="year" ng-model="register.year" type= "text" class= "form-control" placeholder="Year" required/>
+                <span ng-show="myForm.year.$dirty && myForm.year.$invalid" class="help-inline">Year is required</span>
+            </div>
+        </div>
+
+        <a href="#/register/index" class="btn btn-material-deep-orange-700">Cancel</a>
+
+        <button ng-click="createRegister(register);"
+                ng-disabled="myForm.$invalid"
+                type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
