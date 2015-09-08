@@ -4,7 +4,9 @@
 
     angular.module('restApp', ['ngRoute', 'ngSanitize', 'restApp.map'])
 
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$locationProvider', '$routeProvider', '$httpProvider', function($locationProvider, $routeProvider, $httpProvider) {
+
+
     $routeProvider
         .when('/site/index', {
             templateUrl: 'views/site/index.html'
@@ -48,6 +50,8 @@
         .otherwise({
             redirectTo: '/site/index'
         });
+
+        $locationProvider.html5Mode(true).hashPrefix('!');
 }]);
 
 })();

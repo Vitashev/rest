@@ -1,7 +1,7 @@
 <div >
     <h1>Register</h1>
     <div ng-show="registers.length > 0">
-        <a class="btn btn-material-amber-700" href="#/register/create">
+        <a class="btn btn-material-amber-700" href="register/create">
             ADD
         </a><br>
         <div class="md-list-group">
@@ -19,7 +19,7 @@
                     <div class="col-md-3">{{data.owner_data}}</div>
                     <div class="col-md-1 text-center">{{data.year}}</div>
                     <div class="col-md-2 text-center">
-                        <a class="btn btn-primary" href="#/register/update/{{data.id}}">
+                        <a class="btn btn-primary" href="register/update/{{data.id}}">
                             UPDATE
                         </a>
                         <a class="btn btn-danger btn-material-deep-orange-700" ng-click="deleteRegister(data.id)">
